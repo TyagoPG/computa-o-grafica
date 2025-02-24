@@ -1,0 +1,93 @@
+import math
+
+#função que calcula o tamanho ou magnetude de um vetor
+def calculaTamanho(x,y,z):
+    tam = math.sqrt(x*x + y*y + z*z)
+    return tam
+
+#Faz a leitura das variaveis do primeiro vetor
+print("EXERCICIO 01 - COMPUTAÇÃO GRÁFICA") #
+print("\n DIGITE OS VALORES DO VETOR") #print mostra uma mensagem na tela
+x = float(input("digite o valor de X: "))
+y = float(input("digite o valor de Y: "))
+z = float(input("digite o valor de Z: "))
+print("-----------------------\n")
+print("\n valor de X, Y e Z lidos",x,y,z) #print mostra uma mensagem na tela
+
+while True:
+    print("1. calcular o tamanho do vetor") #print mostra uma mensagem na tela
+    print("2. normalisar o vetor") #quando a maguinetude ou o tamanho é igual a 1
+    print("3. adicionar outro vetor")
+    print("4. subtrair outro vetor")
+    print("5. multipricar por escalar")
+    print("6. dividir por escalar")
+    print("7. produto escalar")
+    print("8. terminar")
+
+    op = int(input("digite a opção: "))
+    
+    # a)
+    if op ==1:
+        #calcula o tamanho do vetor
+        tam = calculaTamanho(x,y,z)
+        print("\n O tamanho é igual a", round(tam,2))
+        print("-----------------------\n")
+
+    # b)
+    elif op == 2:
+        #calcula o tamanho do vetor
+        tam = calculaTamanho(x,y,z)
+        #normaliza o vetor
+        xn = x/tam
+        yn = y/tam
+        zn = z/tam
+        print("\n O vetor normalizado é {:.2f} {:.2f} {:.2f}".format(xn, yn, zn) )
+        print("----------------------\n")
+
+    # c)
+    elif op == 3:
+        print("\n DIGITE OS VALORES DO VETOR 02") #print mostra uma mensagem na tela
+        x2 = float(input("digite o valor de X 02: "))
+        y2 = float(input("digite o valor de Y 02: "))
+        z2 = float(input("digite o valor de Z 02: "))
+        print("\n a soma dos vetors é ", x + x2,",",y + y2,",",z + z2)
+        print("----------------------\n")
+
+
+    # d)
+    elif op == 4:
+        print("\n DIGITE OS VALORES DO VETOR 02") #print mostra uma mensagem na tela
+        x2 = float(input("digite o valor de X 02: "))
+        y2 = float(input("digite o valor de Y 02: "))
+        z2 = float(input("digite o valor de Z 02: "))
+        print("\n a subitração dos vetors é ", x - x2,",",y - y2,",",z - z2)
+        print("----------------------\n")
+
+
+    # e)
+    elif op == 5:
+        escalar = float(input("Digite o escalr: "))
+        print("\n A multiplicação do escalar é ", x*escalar,",",y*escalar,",",z*escalar)
+        print("----------------------\n")
+
+    # f)
+    elif op == 6:
+        escalar = float(input("Digite o escalr: "))
+        print("\n A divisão do escalar é ", round(x/escalar,2),",",round(y/escalar,2),",",round(z/escalar,2))
+        print("----------------------\n")
+
+    # g)
+    elif op == 7:
+        print("\n DIGITE OS VALORES DO VETOR 02") #print mostra uma mensagem na tela
+        x2 = float(input("digite o valor de X 02: "))
+        y2 = float(input("digite o valor de Y 02: "))
+        z2 = float(input("digite o valor de Z 02: "))
+        produtoEscalar = x*x2 + y*y2 + z*z2
+        print("\n Produto Escalar = ",produtoEscalar)
+        print("----------------------\n")
+
+    elif op == 8:
+        break #sai do laço
+
+    else:
+        print("Opção inválida!")
